@@ -1,0 +1,41 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="nav-container">
+    <div class="nav-date p-2">
+      <span>{{ pueDate | date: "EEE, d MMM y" }}</span>
+    </div>
+    <div class="nav-logo p-2">
+      <img height="40" [alt]="title" src="/assets/logo-nyt-header.svg" />
+    </div>
+    <div class="nav-lang p-2">
+      <span
+        class="nav-lang-option"
+        [ngClass]="{ 'fw-bold': selectedLanguage === 'ENG' }"
+        ><a (click)="selectLanguage('ENG')">ENG</a></span
+      >
+      <span> \ </span>
+      <span
+        class="nav-lang-option"
+        [ngClass]="{ 'fw-bold': selectedLanguage === 'ESP' }"
+        ><a (click)="selectLanguage('ESP')">ESP</a></span
+      >
+    </div>
+  </div>
+</nav>
+
+<div class="container feeds-container" role="main">
+  <div class="row p-0 m-0" *ngFor="let item of items; let last = last">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+      <app-feed-card
+        [title]="item.title"
+        [description]="item.description"
+        [author]="item.author"
+        [link]="item.link"
+        [image]="item.image"
+        [pubDate]="item.pubDate"
+        [showDivider]="!last"
+      ></app-feed-card>
+    </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.nav-container {
+    border-bottom: 1px solid black;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.nav-date, .nav-lang {
+    min-width: 25%;
+    display: inline-block;
+}
+
+.nav-lang {
+    text-align: right;
+    
+    .nav-lang-option {
+        cursor: pointer;
+    }
+}
+
+.nav-logo {
+    min-width: 50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.feeds-container {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
